@@ -67,5 +67,5 @@ char* createCharArray(int size){
 void freeCharArray(char* arreglo){
    //el delete debe de ir con el corchete [] ya qu estamos liberando un arreglo
    if(arreglo!=NULL)
-   delete[] arreglo;
+      delete[] arreglo;
 }
