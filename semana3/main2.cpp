@@ -8,24 +8,40 @@ using std::endl;
 int** createIntMatrix(int);
 
 //inicializar matriz
-void intIntMatrix(int**,int);
+void initIntMatrix(int**,int);
 
 //imprime una matriz de nxn enteros
 void printIntMatrix(int**, int);
 
 //liberar una matriz de nxn enteros
-void freeIntMatrix(int**,int);
+void freeIntMatrix(int**&,int);
 
 int main(){
+    int tam = 10;
+    int** matriz = createIntMatrix(tam);    
+    initIntMatrix(matriz, tam);
+    printIntMatrix(matriz,tam);
+    freeIntMatrix(matriz,tam);
     
-    
-   
     return 0;
+}
+
+//liberar matriz nxn
+void freeIntMatrix(int**& matrix, int size){
+    //primero liberar las columnas de cada fila
+    for(int i = 0; i < size; i++ ){
+        delete[] matrix[i];
+        matrix[i]=NULL;
+    }
+    //liberar fijas
+    delete[] matrix;
+    matrix = NULL;
+    
 }
 
 //Provisionar la matriz
 int** createIntMatrix(int size){
-    int** reVal = NULL;
+    int** retVal = NULL;
     //provisionar las filas
     retVal = new int*[size];
     //provisionar las columnas de cada fila
@@ -39,8 +55,19 @@ int** createIntMatrix(int size){
 void initIntMatrix(int** matrix, int size){
     for( int i = 0; i < size; i++ ){
         for(int j = 0; j < size; j++ ){
-            matriz[i][j] = 0;
+            matrix[i][j] = 0;
         }
     }
 }
 
+//imprimir la matriz
+void printIntMatrix(int** matrix, int size){
+    cout << "Matriz de enteros: " << endl;
+    for(int i = 0; i < size; i++ ){
+        for(int j = 0; j < size; j++ ){
+            cout << " " << matrix[i][j];
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
