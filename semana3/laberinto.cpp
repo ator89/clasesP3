@@ -10,7 +10,7 @@ using std::ifstream;
 char** provisionarMatriz(int);
 
 //liberar memoria de la matriz
-void liberarMatriz(char**,int);
+void liberarMatriz(char**&,int);
 
 //imprimir la matriz
 void printMatrix(char**,int);
@@ -51,4 +51,39 @@ int main(){
  return 0;
 }//end main
 
+//crear la matriz 
+char** provisionarMatriz(int size){
+    char** retVal = NULL;
+    // filas
+    retVal = new char*[size];
 
+    //columnas
+    for (int i = 0; i < size; i++ ){
+        retVal[i] = new char[size];
+    }
+    return retVal;
+}
+
+//imprimir la matriz (laberinto)
+void printMatrix(char** matrix, int size){
+    cout << "Laberinto: " << endl;
+    for (int i = 0; i < size; i++ ){
+        for( int j = 0; j < size ; j++ ){
+            cout << ' ' << matrix[i][j];
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+//liberar la matriz
+void liberarMatriz(char**& matrix, int size){
+    //comenzar por las columnas
+    for( int i = 0; i < size; i++ ){
+        delete[] matrix[i];
+        matrix[i] = NULL;
+    }
+    //filas
+    delete[] matrix;
+    matrix = NULL;    
+}
