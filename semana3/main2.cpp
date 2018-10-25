@@ -4,11 +4,20 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+#include <cstdlib>
+using std::rand;
+using std::srand;
+
 //provisiona una matriz de nxn enteros
 int** createIntMatrix(int);
 
 //inicializar matriz
 void initIntMatrix(int**,int);
+
+//***A: Inicializar matriz con números aleatorios
+void initRanIntMatrix(int**, int);
+void printRanIntMatrix(int**&, int);
+void freeRanIntMatrix(int**&,int);
 
 //imprime una matriz de nxn enteros
 void printIntMatrix(int**, int);
@@ -23,8 +32,22 @@ int main(){
     printIntMatrix(matriz,tam);
     freeIntMatrix(matriz,tam);
     
+    int** ma = createIntMatrix(tam);
+    initRanIntMatrix(ma, tam);
+    printRanIntMatrix(ma, tam);
+
+    //Ejercicio
+    //A: Crear una función que inicialize la matriz con valores aleatorios
+    //entre 1 y 100
+    //B: Crear una función que copie los elementos de una matriz a otra, 
+    //ambas matrices son del mismo tamaño. Copiar los elementos de una matriz
+    //inicializada con la función del ejercicio A en una matriz inicializada
+    //con la función initIntMatrix creada en clase.
+    
     return 0;
 }
+
+
 
 //liberar matriz nxn
 void freeIntMatrix(int**& matrix, int size){
@@ -39,6 +62,15 @@ void freeIntMatrix(int**& matrix, int size){
     
 }
 
+void freeRanIntMatrix(int**& matrix, int size){
+    for(int i=0; i < size; i++){
+        delete[] matrix[i];
+        matrix[i]=NULL;
+    }
+    delete[] matrix;
+    matrix = NULL;
+}
+
 //Provisionar la matriz
 int** createIntMatrix(int size){
     int** retVal = NULL;
@@ -49,6 +81,26 @@ int** createIntMatrix(int size){
         retVal[i] = new int[size];
     }
     return retVal;
+}
+
+//***init A:
+void initRanIntMatrix(int** matrix, int size){
+    for( int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            matrix[i][j] = rand()%101;
+        }
+    }
+}
+//***print A
+void printRanIntMatrix(int**& matrix, int size){
+    cout << "Matriz con números aleatorios: " << endl;
+    for( int i = 0; i < size; i++ ){
+        for( int j = 0; j < size; j++ ){
+            cout << ' '<< ' '<< matrix[i][j];
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
 
 //inicializar la matriz
