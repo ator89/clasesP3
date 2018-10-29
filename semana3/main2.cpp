@@ -25,6 +25,8 @@ void printIntMatrix(int**, int);
 //liberar una matriz de nxn enteros
 void freeIntMatrix(int**&,int);
 
+void salir(char**,int,int,int);
+
 int main(){
     int tam = 10;
     int** matriz = createIntMatrix(tam);    
@@ -47,7 +49,10 @@ int main(){
     return 0;
 }
 
-
+void salir(matriz**, int size, int x, int y){
+    bool salio = false;
+    
+}
 
 //liberar matriz nxn
 void freeIntMatrix(int**& matrix, int size){
