@@ -13,7 +13,7 @@ class Laberinto{
         //libera la memoria
         void liberarMatriz();//no hay parametros porque ya está encapsulad
         //crea la matriz en memoria
-        void provisionarMatriz();
+        void provisionarMatriz(int);
         //leer laberinto del archivo
         void cargarLaberinto(char*);
         
