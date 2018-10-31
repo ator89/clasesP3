@@ -11,8 +11,9 @@ class Date{
         //Constructor y destructor
         Date();
         ~Date();
-
-        std::string toString();
+        Date(int,int,int);
+        ~Date(int,int,int);
+        
         //getters and setters
         void setDay(int);
         int getDay();
@@ -23,9 +24,10 @@ class Date{
         void setYear(int);
         int getYear();
 
-        std::string getDayName();
+        std::string getDayName(string);
         std::sintrg getMonthName();
-    
+        std::string toString();//toString(formato)
+        int dateDiff(Date*);
 };
 
 #endif
