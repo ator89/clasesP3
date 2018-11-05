@@ -1,5 +1,8 @@
 #include "Date.h"
 
+#include <string.h>
+using namespace std;
+
 Date::Date(){
     this->day=0;
     this->month=0;
@@ -12,6 +15,9 @@ Date::Date(int day, int month, int year){
     this->year = year;
 }
 
+Date::~Date(){
+    
+}
 void Date::setDay(int day){
     this->day = day;
 }
@@ -36,14 +42,14 @@ int Date::getYear(){
     return year;
 }
 
-std::string Date::getDayName(){
+string Date::getDayName(string dayName){
     return "Date name";
 }
 
-std::string Date::getMonthName(){
+string Date::getMonthName(){
     return "Month name";
 }
 
-std::string Date::toString(){
-    return "to String"
+string Date::toString(string texto){
+    return "to String";
 }

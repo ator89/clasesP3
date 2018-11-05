@@ -1,6 +1,9 @@
 #ifndef TIME_H
 #define TIME_H
 
+#include <string>
+using std::string;
+
 class Time{
     private:
         int hour;
@@ -11,7 +14,6 @@ class Time{
         Time();
         ~Time();
         Time(int,int);
-        ~Time(int,int);
 
         //getters and setters
         void setHour(int);
@@ -20,9 +22,9 @@ class Time{
         void setMin(int);
         int getMin();
  
-        std::string getDayName();
+        string getDayName();
        
-        std::string toString();
+        string toString();
         //timeDiff
 };
 

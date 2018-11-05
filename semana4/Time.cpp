@@ -1,5 +1,8 @@
 #include "Time.h"
 
+#include <string>
+using std::string;
+
 Time::Time(){
     hour = 0;
     min = 0;
@@ -14,16 +17,24 @@ void Time::setHour(int hour){
     this->hour = hour;
 }
 
-void Time::getHour(){
+int Time::getHour(){
     return hour;
 }
 
 void Time::setMin(int min){
-    this->min;
+    this->min = min;
 }
 
-void Time::getMin(){
+int Time::getMin(){
     return min;
 }
 
+Time::~Time(){}
 
+string Time::toString(){
+    return "Hola mundo";
+}
+
+string Time::getDayName(){
+    return "Dia de la semana";
+}

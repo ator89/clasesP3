@@ -1,6 +1,9 @@
 #ifndef DATE_H
 #define DATE_H
 
+#include <string>
+using std::string;
+
 class Date{
     private:
         int day;
@@ -10,9 +13,8 @@ class Date{
     public:
         //Constructor y destructor
         Date();
+        Date(int,int,int);        
         ~Date();
-        Date(int,int,int);
-        ~Date(int,int,int);
         
         //getters and setters
         void setDay(int);
@@ -24,9 +26,9 @@ class Date{
         void setYear(int);
         int getYear();
 
-        std::string getDayName(string);
-        std::sintrg getMonthName();
-        std::string toString();//toString(formato)
+        string getDayName(string);
+        string getMonthName();
+        string toString(string);//toString(formato)
         int dateDiff(Date*);
 };
 
