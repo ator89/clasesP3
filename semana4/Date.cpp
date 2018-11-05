@@ -1,12 +1,15 @@
 #include "Date.h"
 
+#include <iostream>
+using std::cout;
+using std::endl;
 #include <string.h>
 using namespace std;
 
 Date::Date(){
-    this->day=0;
-    this->month=0;
-    this->year=0;
+    this->day=1;
+    this->month=1;
+    this->year=1900;
 }
 
 Date::Date(int day, int month, int year){
@@ -16,7 +19,7 @@ Date::Date(int day, int month, int year){
 }
 
 Date::~Date(){
-    
+    cout << "Memoria liberada..." << endl;    
 }
 void Date::setDay(int day){
     this->day = day;
