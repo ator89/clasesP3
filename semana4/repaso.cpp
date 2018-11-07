@@ -17,34 +17,47 @@ using std::srand;
 int* crearArreglo(int);
 void initArreglo(int*, int);
 void printArreglo(int*, int);
-void freeUpArr(int*, int);
+void freeupArreglo(int*);
 
 
 int main(){
    int size = 100;
    int* arreglo = NULL;
    
-   arreglo = crearArreglo(100);
-   
+   arreglo = crearArreglo(size);
+   initArreglo(arreglo, size);
+   printArreglo(arreglo, size);
+   freeupArreglo(arreglo); 
 
    return 0;
 }
 
 int* crearArreglo(int size){
    int* retval = NULL;
-   retval = new int*[size];
+   retval = new int[size];
    return retval;
 }
 
+void printArreglo(int* arreglo, int size){
+   if( arreglo !=NULL){
+      for( int i = 0; i < size; i++){
+          cout << arreglo[i] << ' ';
+      }
+      cout << endl;
+   }
+}
 
 void initArreglo(int* arreglo, int size){
-   for( int i = 0; i < size; i++){
-      for( int i = 0; j < size; j++){
-      
+   if( arreglo != NULL){
+      for( int i = 0; i < size; i++){
+         arreglo[i] = rand()%101;
       }
    }
 }
 
-void freeUpArr(int* arreglo, int size){
-   
+void freeupArreglo(int* arreglo){
+   if( arreglo != NULL){
+      delete[] arreglo;
+      arreglo = NULL;
+   }
 }
