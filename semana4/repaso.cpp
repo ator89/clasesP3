@@ -18,18 +18,51 @@ int* crearArreglo(int);
 void initArreglo(int*, int);
 void printArreglo(int*, int);
 void freeupArreglo(int*);
-
+void buscarValor(int*, int);
 
 int main(){
    int size = 100;
    int* arreglo = NULL;
    
    arreglo = crearArreglo(size);
+   //Inicializar arreglo
    initArreglo(arreglo, size);
+   
+   //Imprimir arreglo
    printArreglo(arreglo, size);
+   
+   buscarValor(arreglo, size);
+
+   //liberar memoria 
    freeupArreglo(arreglo); 
 
    return 0;
+}
+
+void buscarValor(int* arreglo, int size){
+   int valor, aux;
+   int cont = 0;
+   
+   for ( int i = 0; i < size; i++){
+      aux = arreglo[i];
+      cout << aux << endl;
+      
+      if (aux == arreglo[i+1]){
+         valor = aux;
+      }
+      
+      if( aux == arreglo[i]){
+         aux = valor;
+         cont++;
+      }
+      
+      if(arreglo[i] == valor){
+         cont++;
+         cout << arreglo[i] << endl;
+         cout << valor << endl;
+      }
+      cout << endl;
+   }
 }
 
 int* crearArreglo(int size){
