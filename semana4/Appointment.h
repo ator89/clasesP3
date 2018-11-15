@@ -12,16 +12,23 @@ class Appointment{
         Date* fecha;
         string descripcion;
     public:
+        //Constructores
         Appointment();
         Appointment(Date*,Hour*,Hour*);
+        
+        //Getters
         Hour* getHoraInicio();
         Hour* getHoraFin();
         Date* getFecha();
+        string getDescripcion();
+
+        //Setters
         void setHoraInicio(Hour*);
         void setHoraFin(Hour*);
         void setFecha(Date*);
-        string getDescripcion();
         void setDescripcion(string);
+        
+        //Destructor
         ~Appointment();
 };
 
