@@ -6,6 +6,7 @@
 class Cuadrado: public Rectangulo{
     public:
         Cuadrado(double);
+        ~Cuadrado();
 
 };
 

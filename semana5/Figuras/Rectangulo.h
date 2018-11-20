@@ -8,6 +8,7 @@ class Rectangulo : public Figura{
         double sideA, sideB;
     public:
         Rectangulo(double,double);
+        ~Rectangulo();
         double area();
         double perimetro();
 };
