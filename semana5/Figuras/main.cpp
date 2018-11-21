@@ -6,6 +6,8 @@
 using std::endl;
 using std::cout;
 
+#include <typeinfo>
+
 int main(){
     //Figura figura;
     //cout << "Área: " << figura.area() << endl;
@@ -17,6 +19,7 @@ int main(){
     //delete figura2;
     
     Figura* cuadrado = new Cuadrado(50);
+    Cuadrado* cuadrado1 = new Cuadrado(50); 
     cout << "El perimetro del cuadrado es: " 
             << cuadrado->perimetro() << endl;
    
@@ -24,7 +27,19 @@ int main(){
     cout << *cuadrado + figura2 << endl;
      
     cout << cuadrado->operator==(figura2) << endl ;
+   
+    cout << "Ptr variable cuadrado" << typeid(cuadrado).name() << endl;
+    cout << "Variable Cuadrado: " << typeid(*cuadrado).name() << endl;
+    cout << "Tipo de dato: " << typeid(Cuadrado*).name() << endl;
+
+    if(typeid(Cuadrado) == typeid(cuadrado)){
+        cout << "La variable es un cuadrado" << endl;
+    } else{
+        cout << "La variable no es un cuadrado" << endl;
+    }
+
     
+ 
     delete figura2;
     delete cuadrado;
      
