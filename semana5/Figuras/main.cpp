@@ -21,8 +21,10 @@ int main(){
             << cuadrado->perimetro() << endl;
    
     cout << cuadrado->perimetro()+figura2->perimetro() << endl;
-    cout << *cuadrado +figura2 << endl;
- 
+    cout << *cuadrado + figura2 << endl;
+     
+    cout << cuadrado->operator==(figura2) << endl ;
+    
     delete figura2;
     delete cuadrado;
      

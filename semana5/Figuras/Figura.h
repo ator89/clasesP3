@@ -8,6 +8,7 @@ class Figura{
         virtual double area()=0; // Método virtual puro si se iguala a 0
         virtual double perimetro()=0;
         double operator+(Figura*); //implentando sobrecarga de operadores
+        bool operator==(Figura*);
         virtual ~Figura();    
 };
 

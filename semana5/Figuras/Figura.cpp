@@ -18,3 +18,12 @@ Figura::~Figura(){
 double Figura::operator+(Figura* LD){
     return this->perimetro() + LD ->perimetro(); 
 }
+
+bool Figura::operator==(Figura* LD){
+     
+    if ( this->perimetro() == LD->perimetro() ){
+        return true;
+    }
+else{return false;
+    }
+}
