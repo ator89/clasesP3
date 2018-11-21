@@ -38,7 +38,7 @@ int main(){
         cout << "La variable no es un cuadrado" << endl;
     }
 
-    
+    cout << cuadrado << endl; 
  
     delete figura2;
     delete cuadrado;
