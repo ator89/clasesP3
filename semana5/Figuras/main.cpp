@@ -22,7 +22,13 @@ int main(){
     Cuadrado* cuadrado1 = new Cuadrado(50); 
     cout << "El perimetro del cuadrado es: " 
             << cuadrado->perimetro() << endl;
+    
+    //invocar un método de la clase Cuadrado
    
+
+    Cuadrado* temporal = dynamic_cast<Cuadrado*>(cuadrado);
+     cout << "La longitud de lado es" << temporal->getLado() << endl; 
+       
     cout << cuadrado->perimetro()+figura2->perimetro() << endl;
     cout << *cuadrado + figura2 << endl;
      

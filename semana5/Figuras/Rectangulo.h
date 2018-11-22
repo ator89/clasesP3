@@ -4,7 +4,7 @@
 #include "Figura.h"
 
 class Rectangulo : public Figura{
-    private:
+    protected:
         double sideA, sideB;
     public:
         Rectangulo(double,double);
