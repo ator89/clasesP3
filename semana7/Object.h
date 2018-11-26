@@ -5,7 +5,7 @@
 using std::string;
 
 class Object{
-private:
+
 public:
   //Object();
   virtual ~Object();

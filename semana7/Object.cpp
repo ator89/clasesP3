@@ -1,4 +1,4 @@
-#include <Object.h>
+#include "Object.h"
 
 
 //Destructor
@@ -7,6 +7,7 @@ Object::~Object(){
 }
 
 //toString
+/*
 string Object::toString(){
   return -1;
 }
@@ -14,3 +15,4 @@ string Object::toString(){
 bool Object::equals(Object* object){
   return object;
 }
+*/
