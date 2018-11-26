@@ -27,13 +27,25 @@ int main(){
    
 
     Cuadrado* temporal = dynamic_cast<Cuadrado*>(cuadrado);
-     cout << "La longitud de lado es" << temporal->getLado() << endl; 
-       
+    //if (temporal!=NULL)
+    cout << "La longitud de lado es" << temporal->getLado() << endl; 
+    
+
+    //reinterpret cast
+    cout << "****************" << endl;
+    int entero=2500;
+    char* temp;
+    temp = reinterpret_cast<char*>(&entero);
+    cout << temp << endl;
+    cout << "*****************" << endl;
+
+    //sobrecarga de operadores 
     cout << cuadrado->perimetro()+figura2->perimetro() << endl;
     cout << *cuadrado + figura2 << endl;
      
     cout << cuadrado->operator==(figura2) << endl ;
    
+    //Type ID y type info
     cout << "Ptr variable cuadrado" << typeid(cuadrado).name() << endl;
     cout << "Variable Cuadrado: " << typeid(*cuadrado).name() << endl;
     cout << "Tipo de dato: " << typeid(Cuadrado*).name() << endl;
