@@ -1,5 +1,9 @@
 #include "ArrayStack.h"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 ArrayStack::ArrayStack(){
   pos = 0;
   size = 100;
@@ -12,20 +16,44 @@ ArrayStack::ArrayStack(){
 
 bool ArrayStack::push(Object* obj){
 
+  if(pos==size){
+    return false;
+  }else{
+    array[pos]=obj;
+    pos++;
+    return true;
+  }
 
-  return false;
 }
 
 Object* ArrayStack::pop(){
+
+  if( pos == 0){
     return 0;
+  }
+  else{
+    pos--;
+    Object* retVal = array[pos];
+    array[pos]=0;
+    return retVal;
+  }
 }
 
 Object* ArrayStack::top(){
-  return 0;
+  if(pos == 0){
+    return 0;
+  }
+  else{
+    return array[pos-1];
+  }
 }
 
 void ArrayStack::print(){
-
+  cout << "Stack:>> ";
+  for(int i=pos-1; i>=0;i--){
+    cout << "<" << array[i]->toString() << "> ";
+  }
+  cout << endl;
 }
 
 ArrayStack::~ArrayStack(){
