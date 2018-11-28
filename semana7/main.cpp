@@ -2,6 +2,7 @@
 #include "ArrayStack.h"
 #include "Object.h"
 #include "Char.h"
+#include "LinkedStack.h"
 
 #include <iostream>
 using std::cout;
@@ -9,7 +10,7 @@ using std::cin;
 using std::endl;
 
 int main(){
-  Stack* stack = new ArrayStack();
+  Stack* stack = new LinkedStack();
 
   cout << "Ingrese la cadena a invertir; ";
   string cadena;
