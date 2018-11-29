@@ -39,6 +39,18 @@ int main(){
   delete stack;
   */
   ofstream outPutFile;
-  outPutFile.open("test.txt");
+  outPutFile.open("test.txt",std::ios::app);
+
+  ArrayStack* arrayStack = new ArrayStack();
+  arrayStack->push(new Char('A'));
+  arrayStack->push(new Char('B'));
+  arrayStack->push(new Char('C'));
+
+  cout << arrayStack;
+  outPutFile << arrayStack;
+  delete arrayStack;
+
+
+  outPutFile.close();
 
 }

@@ -8,9 +8,11 @@ using std::ofstream;
 int main(){
 
   ofstream arc;
-  arc.open("test.txt");
-  arc << "jjj texto.";
+  arc.open("test.txt",std::ios::app);
+  arc << "Otra cosa, otra cosa " << endl ;
   arc.close();
+
+
 
   return 0;
 }
