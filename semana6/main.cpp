@@ -11,6 +11,7 @@ using std::endl;
 
 #include <fstream>
 using std::ofstream;
+using std::ifstream;
 
 int main(){
   /*
@@ -52,5 +53,24 @@ int main(){
 
 
   outPutFile.close();
+
+  //leer del archivo
+  string fileName;
+  cout << "Ingrese el nombre del archivo: ";
+  cin >> fileName;
+
+  ifstream inputFile;
+  inputFile.open(fileName.c_str());
+  if( !inputFile.is_open()){
+    cout << "El archivo no existe." << endl;
+  }else{
+    string buffer;
+    cout << "El contenido del archivo es: " << endl;
+    while(!inputFile.eof()){
+      getline(inputFile,buffer);
+      cout << buffer << endl;
+    }
+    inputFile.close();
+  }
 
 }
