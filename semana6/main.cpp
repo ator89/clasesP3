@@ -9,7 +9,11 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+#include <fstream>
+using std::ofstream;
+
 int main(){
+  /*
   Stack* stack = new LinkedStack();
 
   cout << "Ingrese la cadena a invertir; ";
@@ -33,4 +37,8 @@ int main(){
 
 
   delete stack;
+  */
+  ofstream outPutFile;
+  outPutFile.open("test.txt");
+
 }
