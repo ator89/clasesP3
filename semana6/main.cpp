@@ -40,7 +40,7 @@ int main(){
   delete stack;
   */
   ofstream outPutFile;
-  outPutFile.open("test.txt",std::ios::app);
+  outPutFile.open("test2.txt",std::ios::app);
 
   ArrayStack* arrayStack = new ArrayStack();
   arrayStack->push(new Char('A'));
@@ -48,6 +48,7 @@ int main(){
   arrayStack->push(new Char('C'));
 
   cout << arrayStack;
+  //escribir el stacj en el archivo
   outPutFile << arrayStack;
   delete arrayStack;
 
@@ -63,13 +64,19 @@ int main(){
   inputFile.open(fileName.c_str());
   if( !inputFile.is_open()){
     cout << "El archivo no existe." << endl;
-  }else{
+  }else{/*
     string buffer;
     cout << "El contenido del archivo es: " << endl;
     while(!inputFile.eof()){
       getline(inputFile,buffer);
       cout << buffer << endl;
-    }
+    }*/
+    //12/4/2018
+    ArrayStack* arrayStack2 = new ArrayStack();
+    inputFile >> arrayStack2;
+    cout << "Los datos leidos son: " << arrayStack2;
+    delete arrayStack2;
+
     inputFile.close();
   }
 
