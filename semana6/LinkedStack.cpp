@@ -37,7 +37,7 @@ Object* LinkedStack::pop(){
     inicio=inicio->getNext();
     //obtener el objeto a retornar
     Object* retVal = tmp->getData();
-    //Preparar para liverar el nodo que no se necesita máscanf
+    //Preparar para liberar el nodo que no se necesita máscanf
     tmp->setData(0);//asignar null
     tmp->setNext(0);//asignar null
     //liberar la memoria del nodo
